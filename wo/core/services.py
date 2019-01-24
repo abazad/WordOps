@@ -18,7 +18,7 @@ class WOService():
             Similar to `service xyz start`
         """
         try:
-            if service_name in ['nginx', 'php5-fpm']:
+            if service_name in ['nginx', 'php7.2-fpm']:
                 service_cmd = ('{0} -t && service {0} start'
                                .format(service_name))
             else:
@@ -65,7 +65,7 @@ class WOService():
             Similar to `service xyz restart`
         """
         try:
-            if service_name in ['nginx', 'php5-fpm']:
+            if service_name in ['nginx', 'php7.2-fpm']:
                 service_cmd = ('{0} -t && service {0} restart'
                                .format(service_name))
             else:
@@ -91,7 +91,7 @@ class WOService():
             Similar to `service xyz stop`
         """
         try:
-            if service_name in ['nginx', 'php5-fpm']:
+            if service_name in ['nginx', 'php7.2-fpm']:
                 service_cmd = ('{0} -t && service {0} reload'
                                .format(service_name))
             else:
@@ -117,7 +117,7 @@ class WOService():
         try:
             is_exist = subprocess.getstatusoutput('which {0}'
                                                   .format(service_name))
-            if is_exist[0] == 0 or service_name in ['php7.0-fpm', 'php5.6-fpm']:
+            if is_exist[0] == 0 or service_name in ['php7.2-fpm', 'php7.2-fpm']:
                 retcode = subprocess.getstatusoutput('service {0} status'
                                                      .format(service_name))
                 if retcode[0] == 0:
