@@ -47,15 +47,6 @@ script:
   - sudo wo site create site12.org --wpsubdomain --wpfc || sudo tail -n50 /var/log/wo/wordops.log
   - sudo wo site create site12.in --wpfc --wpsubdomain || sudo tail -n50 /var/log/wo/wordops.log
 
-  - yes | sudo wo site create site.hhvm.pagespeed2.com --wpsc --hhvm || sudo tail -n50 /var/log/wo/wordops.log
-  - yes | sudo wo site create site.hhvm.pagespeed4.com --wpfc --hhvm || sudo tail -n50 /var/log/wo/wordops.log
-  - yes | sudo wo site create site.hhvm.pagespeed5.com --wpsubdir --hhvm || sudo tail -n50 /var/log/wo/wordops.log
-  - yes | sudo wo site create site.hhvm.pagespeed6.com --wpsubdir --wpsc --hhvm || sudo tail -n50 /var/log/wo/wordops.log
-  - yes | sudo wo site create site.hhvm.pagespeed8.com --wpsubdir --wpfc --hhvm || sudo tail -n50 /var/log/wo/wordops.log
-  - yes | sudo wo site create site.hhvm.pagespeed9.com --wpsubdomain --hhvm || sudo tail -n50 /var/log/wo/wordops.log
-  - yes | sudo wo site create site.hhvm.pagespeed10.org --wpsubdomain --wpsc --hhvm || sudo tail -n50 /var/log/wo/wordops.log
-  - yes | sudo wo site create site.hhvm.pagespeed12.in --wpfc --wpsubdomain --hhvm || sudo tail -n50 /var/log/wo/wordops.log
-
   - sudo wo site create site1.localtest.me --php --mysql || sudo tail -n50 /var/log/wo/wordops.log
   - sudo wo site create site2.localtest.me --mysql --html || sudo tail -n50 /var/log/wo/wordops.log
   - sudo wo site create site3.localtest.me --php --html || sudo tail -n50 /var/log/wo/wordops.log
@@ -64,7 +55,6 @@ script:
   - yes | sudo wo site create site6.localtest.me --wpredis || sudo tail -n50 /var/log/wo/wordops.log
   - yes | sudo wo site create site7.localtest.me --wpsubdomain --wpredis || sudo tail -n50 /var/log/wo/wordops.log
   - yes | sudo wo site create site8.localtest.me --wpsubdir --wpredis || sudo tail -n50 /var/log/wo/wordops.log
-
 
   - sudo wo debug --all || sudo tail -n50 /var/log/wo/wordops.log
   - sudo wo debug --all=off || sudo tail -n50 /var/log/wo/wordops.log
@@ -88,8 +78,6 @@ script:
   - sudo wo site update site9.com --wpsubdomain --wpfc || sudo tail -n50 /var/log/wo/wordops.log
   - sudo wo site update site9.com --wpsubdomain --wpsc || sudo tail -n50 /var/log/wo/wordops.log
   - yes | sudo wo site update site.hhvm.pagespeed12.in --hhvm=off || sudo tail -n50 /var/log/wo/wordops.log
-  - yes | sudo wo site update site9.com --hhvm || sudo tail -n50 /var/log/wo/wordops.log
-  - sudo wo site info site.hhvm.pagespeed12.in || sudo tail -n50 /var/log/wo/wordops.log
   - sudo wo site info site9.com || sudo tail -n50 /var/log/wo/wordops.log
 
   - sudo wo site create www.site-1.com --wp || sudo tail -n50 /var/log/wo/wordops.log|| sudo tail -n50 /var/log/wo/wordops.log
